@@ -38,50 +38,11 @@
       <div class="nav-bar">
         <a href="../index.html" class="nav-link">← Back to Experiments</a>
       </div>
-    </div>
-
-
-
-    <!-- ================= NAVIGATION ================= -->
-
-    <nav>
-
-        <button class="nav-button active"
-                onclick="showSection('aim', this)">
-            Aim
-        </button>
-
-
-        <button class="nav-button"
-                onclick="showSection('theory', this)">
-            Theory / Concept
-        </button>
-
-
-        <button class="nav-button"
-                onclick="showSection('simulation', this)">
-            Simulation
-        </button>
-
-
-        <button class="nav-button"
-                onclick="showSection('quiz', this)">
-            Quiz
-        </button>
-
-    </nav>
-
-
-
-    <main>
-
 
         <!-- ================= AIM ================= -->
 
-        <section id="aim" class="section active">
 
-
-            <div class="card">
+            <div class="lab-section">
 
                 <h2>Aim</h2>
 
@@ -96,7 +57,7 @@
 
 
 
-            <div class="card">
+            <div class="lab-section">
 
                 <h2>Learning Objectives</h2>
 
@@ -126,16 +87,10 @@
 
             </div>
 
-        </section>
-
-
-
         <!-- ================= THEORY ================= -->
 
-        <section id="theory" class="section">
 
-
-            <div class="card">
+            <div class="lab-section">
 
                 <h2>What is AES?</h2>
 
@@ -154,7 +109,7 @@
 
 
 
-            <div class="card">
+            <div class="lab-section">
 
                 <h2>AES Key Sizes</h2>
 
@@ -199,7 +154,7 @@
 
 
 
-            <div class="card">
+            <div class="lab-section">
 
                 <h2>Basic AES Encryption Process</h2>
 
@@ -276,7 +231,7 @@
 
 
 
-            <div class="card">
+            <div class="lab-section">
 
                 <h2>AES Operations</h2>
 
@@ -330,16 +285,10 @@
 
             </div>
 
-        </section>
-
-
-
         <!-- ================= SIMULATION ================= -->
 
-        <section id="simulation" class="section">
 
-
-            <div class="card">
+            <div class="lab-section">
 
                 <h2>AES Simulation</h2>
 
@@ -357,7 +306,7 @@
 
                 <!-- INPUT -->
 
-                <div class="card">
+                <div class="lab-section">
 
                     <h3>Input</h3>
 
@@ -415,7 +364,7 @@
 
                 <!-- OUTPUT -->
 
-                <div class="card">
+                <div class="lab-section">
 
                     <h3>Output</h3>
 
@@ -455,7 +404,7 @@
 
             <!-- AES STEPS -->
 
-            <div class="card">
+            <div class="lab-section">
 
                 <h2>Simulation Steps</h2>
 
@@ -513,7 +462,7 @@
 
             <!-- STATE MATRIX -->
 
-            <div class="card">
+            <div class="lab-section">
 
                 <h2>AES State</h2>
 
@@ -555,348 +504,7 @@
 
             </div>
 
-        </section>
-
-
-
-        <!-- ================= QUIZ ================= -->
-
-        <section id="quiz" class="section">
-
-
-            <div class="card">
-
-                <h2>AES Quiz</h2>
-
-                <p>
-                    Answer the following questions to test
-                    your understanding of AES.
-                </p>
-
-            </div>
-
-
-
-            <!-- QUESTION 1 -->
-
-            <div class="quiz-card">
-
-                <h3>
-                    1. What does AES stand for?
-                </h3>
-
-
-                <label class="option">
-
-                    <input
-                        type="radio"
-                        name="q1"
-                        value="correct">
-
-                    Advanced Encryption Standard
-
-                </label>
-
-
-                <label class="option">
-
-                    <input
-                        type="radio"
-                        name="q1"
-                        value="wrong">
-
-                    Advanced Encoding System
-
-                </label>
-
-
-                <label class="option">
-
-                    <input
-                        type="radio"
-                        name="q1"
-                        value="wrong">
-
-                    Automated Encryption Standard
-
-                </label>
-
-
-                <label class="option">
-
-                    <input
-                        type="radio"
-                        name="q1"
-                        value="wrong">
-
-                    Advanced Electronic Security
-
-                </label>
-
-            </div>
-
-
-
-            <!-- QUESTION 2 -->
-
-            <div class="quiz-card">
-
-                <h3>
-                    2. Which key size is used by AES-128?
-                </h3>
-
-
-                <label class="option">
-
-                    <input
-                        type="radio"
-                        name="q2"
-                        value="wrong">
-
-                    64 bits
-
-                </label>
-
-
-                <label class="option">
-
-                    <input
-                        type="radio"
-                        name="q2"
-                        value="correct">
-
-                    128 bits
-
-                </label>
-
-
-                <label class="option">
-
-                    <input
-                        type="radio"
-                        name="q2"
-                        value="wrong">
-
-                    192 bits
-
-                </label>
-
-
-                <label class="option">
-
-                    <input
-                        type="radio"
-                        name="q2"
-                        value="wrong">
-
-                    512 bits
-
-                </label>
-
-            </div>
-
-
-
-            <!-- QUESTION 3 -->
-
-            <div class="quiz-card">
-
-                <h3>
-                    3. Which AES operation replaces bytes
-                    using the S-Box?
-                </h3>
-
-
-                <label class="option">
-
-                    <input
-                        type="radio"
-                        name="q3"
-                        value="correct">
-
-                    SubBytes
-
-                </label>
-
-
-                <label class="option">
-
-                    <input
-                        type="radio"
-                        name="q3"
-                        value="wrong">
-
-                    ShiftRows
-
-                </label>
-
-
-                <label class="option">
-
-                    <input
-                        type="radio"
-                        name="q3"
-                        value="wrong">
-
-                    MixColumns
-
-                </label>
-
-
-                <label class="option">
-
-                    <input
-                        type="radio"
-                        name="q3"
-                        value="wrong">
-
-                    AddBytes
-
-                </label>
-
-            </div>
-
-
-
-            <!-- QUESTION 4 -->
-
-            <div class="quiz-card">
-
-                <h3>
-                    4. Which AES operation shifts the rows?
-                </h3>
-
-
-                <label class="option">
-
-                    <input
-                        type="radio"
-                        name="q4"
-                        value="wrong">
-
-                    SubBytes
-
-                </label>
-
-
-                <label class="option">
-
-                    <input
-                        type="radio"
-                        name="q4"
-                        value="correct">
-
-                    ShiftRows
-
-                </label>
-
-
-                <label class="option">
-
-                    <input
-                        type="radio"
-                        name="q4"
-                        value="wrong">
-
-                    MixColumns
-
-                </label>
-
-
-                <label class="option">
-
-                    <input
-                        type="radio"
-                        name="q4"
-                        value="wrong">
-
-                    AddRoundKey
-
-                </label>
-
-            </div>
-
-
-
-            <!-- QUESTION 5 -->
-
-            <div class="quiz-card">
-
-                <h3>
-                    5. AES is what type of encryption?
-                </h3>
-
-
-                <label class="option">
-
-                    <input
-                        type="radio"
-                        name="q5"
-                        value="correct">
-
-                    Symmetric encryption
-
-                </label>
-
-
-                <label class="option">
-
-                    <input
-                        type="radio"
-                        name="q5"
-                        value="wrong">
-
-                    Asymmetric encryption
-
-                </label>
-
-
-                <label class="option">
-
-                    <input
-                        type="radio"
-                        name="q5"
-                        value="wrong">
-
-                    Hashing
-
-                </label>
-
-
-                <label class="option">
-
-                    <input
-                        type="radio"
-                        name="q5"
-                        value="wrong">
-
-                    Compression
-
-                </label>
-
-            </div>
-
-
-
-            <button
-                class="main-button quiz-button"
-                onclick="calculateScore()">
-
-                Submit Quiz
-
-            </button>
-
-
-            <div
-                id="quizResult"
-                class="quiz-result">
-
-            </div>
-
-        </section>
-
-
-    </main>
+        </div>
 
 
 
