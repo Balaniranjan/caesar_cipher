@@ -510,3 +510,266 @@ select.form-control option {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--primary);
 }
+
+/* ================= AES SPECIFIC CYBER STYLES ================= */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 25px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 15px;
+}
+.nav-button {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--border-color);
+  padding: 12px 20px;
+  cursor: pointer;
+  font-family: var(--mono-family);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+.nav-button:hover {
+  background: rgba(0, 243, 255, 0.1);
+  color: #fff;
+  box-shadow: var(--glow-primary);
+}
+.nav-button.active {
+  color: var(--primary);
+  border-color: var(--primary);
+  box-shadow: var(--glow-primary);
+  text-shadow: 0 0 5px rgba(0, 243, 255, 0.5);
+}
+.section {
+  display: none;
+}
+.section.active {
+  display: block;
+}
+.key-boxes {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+.key-box {
+  flex: 1;
+  background: rgba(0, 243, 255, 0.05);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  transition: all 0.3s ease;
+}
+.key-box:hover {
+  box-shadow: var(--glow-primary);
+  border-color: var(--primary);
+}
+.key-box h3 {
+  color: var(--primary);
+  font-family: var(--mono-family);
+}
+.process {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+.process-step {
+  width: 250px;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--primary);
+  border-radius: 4px;
+  text-align: center;
+  font-weight: bold;
+  font-family: var(--mono-family);
+  color: #fff;
+  text-transform: uppercase;
+  box-shadow: 0 0 10px rgba(0, 243, 255, 0.1);
+}
+.process-step span {
+  display: inline-block;
+  background-color: var(--primary);
+  color: #000;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  margin-right: 10px;
+  line-height: 28px;
+  text-shadow: none;
+}
+.process-arrow {
+  color: var(--primary);
+  font-size: 24px;
+  text-shadow: var(--glow-primary);
+}
+.concept {
+  border-left: 4px solid var(--primary);
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  background-color: rgba(0, 243, 255, 0.05);
+  color: #fff;
+}
+.concept h3 {
+  color: var(--primary);
+  font-family: var(--mono-family);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+.simulation-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+.simulation-steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+.simulation-steps button {
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--border-color);
+  padding: 12px 20px;
+  cursor: pointer;
+  color: var(--text-main);
+  font-family: var(--mono-family);
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+.simulation-steps button:hover {
+  background: rgba(0, 243, 255, 0.1);
+  border-color: var(--primary);
+  color: var(--primary);
+  box-shadow: var(--glow-primary);
+}
+.step-explanation {
+  margin-top: 25px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 1px solid var(--primary);
+  border-radius: 4px;
+  min-height: 80px;
+  color: #fff;
+  font-family: var(--mono-family);
+  box-shadow: var(--glow-primary);
+}
+.state-matrix {
+  display: grid;
+  grid-template-columns: repeat(4, 60px);
+  gap: 8px;
+  justify-content: center;
+  margin-top: 25px;
+}
+.state-matrix div {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 243, 255, 0.1);
+  border: 1px solid var(--primary);
+  border-radius: 4px;
+  font-family: var(--mono-family);
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 0 5px rgba(0, 243, 255, 0.5);
+}
+.quiz-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 25px;
+  margin-bottom: 25px;
+}
+.quiz-card h3 {
+  color: var(--primary);
+  margin-bottom: 15px;
+  font-family: var(--mono-family);
+}
+.option {
+  display: block;
+  padding: 12px 15px;
+  margin: 10px 0;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.4);
+  color: var(--text-main);
+  transition: all 0.3s ease;
+}
+.option:hover {
+  background: rgba(0, 243, 255, 0.1);
+  border-color: var(--primary);
+  box-shadow: 0 0 8px rgba(0, 243, 255, 0.2);
+}
+.quiz-button {
+  display: block;
+  margin: 30px auto;
+}
+.quiz-result {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 20px;
+  color: var(--primary);
+  font-family: var(--mono-family);
+  text-transform: uppercase;
+  text-shadow: var(--glow-primary);
+}
+/* Re-map AES button classes to Cyber theme */
+.main-button {
+  padding: 12px 28px;
+  font-size: 0.95rem;
+  font-family: var(--mono-family);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #000000;
+  background-color: var(--primary);
+  border: 1px solid var(--primary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  margin-top: 15px;
+}
+.main-button:hover {
+  background-color: transparent;
+  color: var(--primary);
+  box-shadow: var(--glow-primary);
+}
+.secondary-button {
+  padding: 12px 28px;
+  font-size: 0.95rem;
+  font-family: var(--mono-family);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background-color: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  margin-top: 15px;
+  margin-left: 10px;
+}
+.secondary-button:hover {
+  background-color: var(--accent);
+  color: #ffffff;
+  box-shadow: var(--glow-accent);
+}
+footer {
+  text-align: center;
+  background-color: #0f0f16;
+  border-top: 1px solid var(--border-color);
+  color: var(--text-muted);
+  padding: 25px;
+  margin-top: 60px;
+  font-size: 0.9rem;
+  font-family: var(--mono-family);
+  text-transform: uppercase;
+}
