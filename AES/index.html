@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>AES Virtual Lab</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <div class="header-content">
+
+            <h1>AES Virtual Lab</h1>
+
+            <p>
+                Learn the concept, perform encryption, and test your knowledge
+            </p>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ================= NAVIGATION ================= -->
+
+    <nav>
+
+        <button class="nav-button active"
+                onclick="showSection('aim', this)">
+            Aim
+        </button>
+
+
+        <button class="nav-button"
+                onclick="showSection('theory', this)">
+            Theory / Concept
+        </button>
+
+
+        <button class="nav-button"
+                onclick="showSection('simulation', this)">
+            Simulation
+        </button>
+
+
+        <button class="nav-button"
+                onclick="showSection('quiz', this)">
+            Quiz
+        </button>
+
+    </nav>
+
+
+
+    <main>
+
+
+        <!-- ================= AIM ================= -->
+
+        <section id="aim" class="section active">
+
+
+            <div class="card">
+
+                <h2>Aim</h2>
+
+                <p>
+                    To understand the basic working of the
+                    Advanced Encryption Standard (AES) algorithm
+                    and observe how plaintext is transformed
+                    into ciphertext.
+                </p>
+
+            </div>
+
+
+
+            <div class="card">
+
+                <h2>Learning Objectives</h2>
+
+                <ul>
+
+                    <li>
+                        Understand what AES is.
+                    </li>
+
+                    <li>
+                        Understand symmetric encryption.
+                    </li>
+
+                    <li>
+                        Learn the basic AES transformation steps.
+                    </li>
+
+                    <li>
+                        Perform AES encryption using the virtual lab.
+                    </li>
+
+                    <li>
+                        Test your understanding through a quiz.
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= THEORY ================= -->
+
+        <section id="theory" class="section">
+
+
+            <div class="card">
+
+                <h2>What is AES?</h2>
+
+                <p>
+                    AES stands for Advanced Encryption Standard.
+                    It is a symmetric-key encryption algorithm
+                    used to protect digital information.
+                </p>
+
+                <p>
+                    In symmetric encryption, the same secret key
+                    is used for encryption and decryption.
+                </p>
+
+            </div>
+
+
+
+            <div class="card">
+
+                <h2>AES Key Sizes</h2>
+
+                <div class="key-boxes">
+
+
+                    <div class="key-box">
+
+                        <h3>AES-128</h3>
+
+                        <p>
+                            128-bit key
+                        </p>
+
+                    </div>
+
+
+                    <div class="key-box">
+
+                        <h3>AES-192</h3>
+
+                        <p>
+                            192-bit key
+                        </p>
+
+                    </div>
+
+
+                    <div class="key-box">
+
+                        <h3>AES-256</h3>
+
+                        <p>
+                            256-bit key
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="card">
+
+                <h2>Basic AES Encryption Process</h2>
+
+                <div class="process">
+
+
+                    <div class="process-step">
+
+                        <span>1</span>
+
+                        AddRoundKey
+
+                    </div>
+
+
+                    <div class="process-arrow">
+                        ↓
+                    </div>
+
+
+                    <div class="process-step">
+
+                        <span>2</span>
+
+                        SubBytes
+
+                    </div>
+
+
+                    <div class="process-arrow">
+                        ↓
+                    </div>
+
+
+                    <div class="process-step">
+
+                        <span>3</span>
+
+                        ShiftRows
+
+                    </div>
+
+
+                    <div class="process-arrow">
+                        ↓
+                    </div>
+
+
+                    <div class="process-step">
+
+                        <span>4</span>
+
+                        MixColumns
+
+                    </div>
+
+
+                    <div class="process-arrow">
+                        ↓
+                    </div>
+
+
+                    <div class="process-step">
+
+                        <span>5</span>
+
+                        AddRoundKey
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="card">
+
+                <h2>AES Operations</h2>
+
+
+                <div class="concept">
+
+                    <h3>SubBytes</h3>
+
+                    <p>
+                        Each byte in the state is replaced with
+                        another byte using the AES S-Box.
+                    </p>
+
+                </div>
+
+
+                <div class="concept">
+
+                    <h3>ShiftRows</h3>
+
+                    <p>
+                        The bytes in each row of the state are
+                        shifted by different positions.
+                    </p>
+
+                </div>
+
+
+                <div class="concept">
+
+                    <h3>MixColumns</h3>
+
+                    <p>
+                        The bytes in each column are mathematically
+                        mixed to provide diffusion.
+                    </p>
+
+                </div>
+
+
+                <div class="concept">
+
+                    <h3>AddRoundKey</h3>
+
+                    <p>
+                        The current state is combined with a
+                        round key using XOR.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= SIMULATION ================= -->
+
+        <section id="simulation" class="section">
+
+
+            <div class="card">
+
+                <h2>AES Simulation</h2>
+
+                <p>
+                    Enter a message and a 16-character key to
+                    perform AES-128 encryption.
+                </p>
+
+            </div>
+
+
+
+            <div class="simulation-grid">
+
+
+                <!-- INPUT -->
+
+                <div class="card">
+
+                    <h3>Input</h3>
+
+
+                    <label for="plaintext">
+                        Plaintext
+                    </label>
+
+
+                    <textarea
+                        id="plaintext"
+                        placeholder="Enter your message here..."
+                    ></textarea>
+
+
+                    <label for="key">
+                        Secret Key
+                    </label>
+
+
+                    <input
+                        type="text"
+                        id="key"
+                        maxlength="16"
+                        placeholder="16 characters"
+                    >
+
+
+                    <p class="input-help">
+                        AES-128 requires a 16-character key
+                        for this demonstration.
+                    </p>
+
+
+                    <button
+                        class="main-button"
+                        onclick="encryptMessage()">
+
+                        Encrypt
+
+                    </button>
+
+
+                    <button
+                        class="secondary-button"
+                        onclick="decryptMessage()">
+
+                        Decrypt
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- OUTPUT -->
+
+                <div class="card">
+
+                    <h3>Output</h3>
+
+
+                    <label>
+                        Ciphertext
+                    </label>
+
+
+                    <div
+                        id="ciphertext"
+                        class="output-box">
+
+                        Your ciphertext will appear here.
+
+                    </div>
+
+
+                    <label>
+                        Decrypted Text
+                    </label>
+
+
+                    <div
+                        id="decryptedText"
+                        class="output-box">
+
+                        Your decrypted text will appear here.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- AES STEPS -->
+
+            <div class="card">
+
+                <h2>Simulation Steps</h2>
+
+                <p class="step-instruction">
+                    Click each step to learn what happens.
+                </p>
+
+
+                <div class="simulation-steps">
+
+
+                    <button onclick="showAESStep(1)">
+                        1. Input
+                    </button>
+
+
+                    <button onclick="showAESStep(2)">
+                        2. AddRoundKey
+                    </button>
+
+
+                    <button onclick="showAESStep(3)">
+                        3. SubBytes
+                    </button>
+
+
+                    <button onclick="showAESStep(4)">
+                        4. ShiftRows
+                    </button>
+
+
+                    <button onclick="showAESStep(5)">
+                        5. MixColumns
+                    </button>
+
+
+                    <button onclick="showAESStep(6)">
+                        6. Ciphertext
+                    </button>
+
+                </div>
+
+
+                <div
+                    id="stepExplanation"
+                    class="step-explanation">
+
+                    Select an AES step to see its explanation.
+
+                </div>
+
+            </div>
+
+
+
+            <!-- STATE MATRIX -->
+
+            <div class="card">
+
+                <h2>AES State</h2>
+
+                <p>
+                    AES processes a block of 16 bytes using
+                    a 4 × 4 state matrix.
+                </p>
+
+
+                <div
+                    id="stateMatrix"
+                    class="state-matrix">
+
+
+                    <div>00</div>
+                    <div>00</div>
+                    <div>00</div>
+                    <div>00</div>
+
+
+                    <div>00</div>
+                    <div>00</div>
+                    <div>00</div>
+                    <div>00</div>
+
+
+                    <div>00</div>
+                    <div>00</div>
+                    <div>00</div>
+                    <div>00</div>
+
+
+                    <div>00</div>
+                    <div>00</div>
+                    <div>00</div>
+                    <div>00</div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= QUIZ ================= -->
+
+        <section id="quiz" class="section">
+
+
+            <div class="card">
+
+                <h2>AES Quiz</h2>
+
+                <p>
+                    Answer the following questions to test
+                    your understanding of AES.
+                </p>
+
+            </div>
+
+
+
+            <!-- QUESTION 1 -->
+
+            <div class="quiz-card">
+
+                <h3>
+                    1. What does AES stand for?
+                </h3>
+
+
+                <label class="option">
+
+                    <input
+                        type="radio"
+                        name="q1"
+                        value="correct">
+
+                    Advanced Encryption Standard
+
+                </label>
+
+
+                <label class="option">
+
+                    <input
+                        type="radio"
+                        name="q1"
+                        value="wrong">
+
+                    Advanced Encoding System
+
+                </label>
+
+
+                <label class="option">
+
+                    <input
+                        type="radio"
+                        name="q1"
+                        value="wrong">
+
+                    Automated Encryption Standard
+
+                </label>
+
+
+                <label class="option">
+
+                    <input
+                        type="radio"
+                        name="q1"
+                        value="wrong">
+
+                    Advanced Electronic Security
+
+                </label>
+
+            </div>
+
+
+
+            <!-- QUESTION 2 -->
+
+            <div class="quiz-card">
+
+                <h3>
+                    2. Which key size is used by AES-128?
+                </h3>
+
+
+                <label class="option">
+
+                    <input
+                        type="radio"
+                        name="q2"
+                        value="wrong">
+
+                    64 bits
+
+                </label>
+
+
+                <label class="option">
+
+                    <input
+                        type="radio"
+                        name="q2"
+                        value="correct">
+
+                    128 bits
+
+                </label>
+
+
+                <label class="option">
+
+                    <input
+                        type="radio"
+                        name="q2"
+                        value="wrong">
+
+                    192 bits
+
+                </label>
+
+
+                <label class="option">
+
+                    <input
+                        type="radio"
+                        name="q2"
+                        value="wrong">
+
+                    512 bits
+
+                </label>
+
+            </div>
+
+
+
+            <!-- QUESTION 3 -->
+
+            <div class="quiz-card">
+
+                <h3>
+                    3. Which AES operation replaces bytes
+                    using the S-Box?
+                </h3>
+
+
+                <label class="option">
+
+                    <input
+                        type="radio"
+                        name="q3"
+                        value="correct">
+
+                    SubBytes
+
+                </label>
+
+
+                <label class="option">
+
+                    <input
+                        type="radio"
+                        name="q3"
+                        value="wrong">
+
+                    ShiftRows
+
+                </label>
+
+
+                <label class="option">
+
+                    <input
+                        type="radio"
+                        name="q3"
+                        value="wrong">
+
+                    MixColumns
+
+                </label>
+
+
+                <label class="option">
+
+                    <input
+                        type="radio"
+                        name="q3"
+                        value="wrong">
+
+                    AddBytes
+
+                </label>
+
+            </div>
+
+
+
+            <!-- QUESTION 4 -->
+
+            <div class="quiz-card">
+
+                <h3>
+                    4. Which AES operation shifts the rows?
+                </h3>
+
+
+                <label class="option">
+
+                    <input
+                        type="radio"
+                        name="q4"
+                        value="wrong">
+
+                    SubBytes
+
+                </label>
+
+
+                <label class="option">
+
+                    <input
+                        type="radio"
+                        name="q4"
+                        value="correct">
+
+                    ShiftRows
+
+                </label>
+
+
+                <label class="option">
+
+                    <input
+                        type="radio"
+                        name="q4"
+                        value="wrong">
+
+                    MixColumns
+
+                </label>
+
+
+                <label class="option">
+
+                    <input
+                        type="radio"
+                        name="q4"
+                        value="wrong">
+
+                    AddRoundKey
+
+                </label>
+
+            </div>
+
+
+
+            <!-- QUESTION 5 -->
+
+            <div class="quiz-card">
+
+                <h3>
+                    5. AES is what type of encryption?
+                </h3>
+
+
+                <label class="option">
+
+                    <input
+                        type="radio"
+                        name="q5"
+                        value="correct">
+
+                    Symmetric encryption
+
+                </label>
+
+
+                <label class="option">
+
+                    <input
+                        type="radio"
+                        name="q5"
+                        value="wrong">
+
+                    Asymmetric encryption
+
+                </label>
+
+
+                <label class="option">
+
+                    <input
+                        type="radio"
+                        name="q5"
+                        value="wrong">
+
+                    Hashing
+
+                </label>
+
+
+                <label class="option">
+
+                    <input
+                        type="radio"
+                        name="q5"
+                        value="wrong">
+
+                    Compression
+
+                </label>
+
+            </div>
+
+
+
+            <button
+                class="main-button quiz-button"
+                onclick="calculateScore()">
+
+                Submit Quiz
+
+            </button>
+
+
+            <div
+                id="quizResult"
+                class="quiz-result">
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            AES Virtual Lab | Educational Purpose
+        </p>
+
+    </footer>
+
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
