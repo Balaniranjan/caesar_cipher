@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Experiment 1: Caesar Cipher - Cryptography Virtual Laboratory</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Cryptography Virtual Laboratory</h1>
+    <p>Experiment 1: Caesar Cipher</p>
+  </header>
+
+  <div class="container">
+    <div class="nav-bar">
+      <a href="index.html" class="nav-link">← Back to Experiments</a>
+    </div>
+
+    <!-- 1. Title Section -->
+    <div class="lab-section">
+      <h1 class="exp-title">Experiment 1: Caesar Cipher</h1>
+    </div>
+
+    <!-- 2. Aim Section -->
+    <div class="lab-section">
+      <h2>Aim</h2>
+      <p>To implement the Caesar Cipher technique for encryption and decryption of a given plaintext using a specified shift value.</p>
+    </div>
+
+    <!-- 3. Algorithm Section -->
+    <div class="lab-section">
+      <h2>Algorithm</h2>
+      <ol class="algorithm-list">
+        <li>Read the plaintext.</li>
+        <li>Read the shift value.</li>
+        <li>For each alphabetic character, shift it by the specified number of positions.</li>
+        <li>If the shift goes beyond Z, wrap around to the beginning of the alphabet.</li>
+        <li>Preserve spaces, numbers and special characters.</li>
+        <li>Generate the ciphertext.</li>
+        <li>For decryption, shift the characters in the opposite direction.</li>
+      </ol>
+
+      <div class="formula-box">
+        <div><strong>Encryption:</strong> C = (P + K) mod 26</div>
+        <div><strong>Decryption:</strong> P = (C - K) mod 26</div>
+        <div class="variables">P = Plaintext, C = Ciphertext, K = Shift value</div>
+      </div>
+    </div>
+
+    <!-- 4. Working Principle Section -->
+    <div class="lab-section">
+      <h2>Working Principle</h2>
+      <p>Caesar Cipher is a substitution cipher in which each alphabetic character is replaced by another character obtained by shifting it by a fixed number of positions in the alphabet.</p>
+      
+      <p><strong>Example:</strong></p>
+      <div class="example-box">
+        <div>Plaintext  : HELLO</div>
+        <div>Shift      : 3</div>
+        <div>Ciphertext : KHOOR</div>
+      </div>
+
+      <p style="margin-top: 16px;">Character transformation breakdown for shift of 3:</p>
+      <p>H → K<br>E → H<br>L → O<br>L → O<br>O → R</p>
+      <p>Each character moves three positions forward.</p>
+
+      <p style="margin-top: 12px;"><strong>Wrap-around rule (Shift = 3):</strong></p>
+      <p>X → A<br>Y → B<br>Z → C</p>
+
+      <table class="lab-table">
+        <thead>
+          <tr>
+            <th>Original</th>
+            <th>Shift</th>
+            <th>Result</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>A</td><td>+3</td><td>D</td></tr>
+          <tr><td>B</td><td>+3</td><td>E</td></tr>
+          <tr><td>C</td><td>+3</td><td>F</td></tr>
+          <tr><td>H</td><td>+3</td><td>K</td></tr>
+          <tr><td>X</td><td>+3</td><td>A</td></tr>
+          <tr><td>Y</td><td>+3</td><td>B</td></tr>
+          <tr><td>Z</td><td>+3</td><td>C</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 5. Program Section -->
+    <div class="lab-section">
+      <h2>Program</h2>
+      <div class="code-container">
+        <div class="code-header">Python Implementation</div>
+        <pre><code>def caesar_encrypt(text, shift):
+    result = ""
+
+    for char in text:
+        if char.isalpha():
+            base = ord('A') if char.isupper() else ord('a')
+            result += chr((ord(char) - base + shift) % 26 + base)
+        else:
+            result += char
+
+    return result
+
+
+def caesar_decrypt(text, shift):
+    return caesar_encrypt(text, -shift)
+
+
+text = input("Enter plaintext: ")
+shift = int(input("Enter shift value: "))
+
+ciphertext = caesar_encrypt(text, shift)
+
+print("Ciphertext:", ciphertext)
+
+decrypted = caesar_decrypt(ciphertext, shift)
+
+print("Decrypted text:", decrypted)</code></pre>
+      </div>
+    </div>
+
+    <!-- 6. Interactive Experiment Section -->
+    <div class="lab-section">
+      <h2>Interactive Experiment</h2>
+      
+      <div class="form-group">
+        <label for="plainText">Plain Text</label>
+        <textarea id="plainText" class="form-control" placeholder="Enter text here...">HELLO</textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="shiftValue">Shift Value</label>
+        <input type="number" id="shiftValue" class="form-control" value="3" style="max-width: 150px;">
+      </div>
+
+      <div class="btn-group">
+        <button id="encryptBtn" class="btn">Encrypt</button>
+        <button id="decryptBtn" class="btn btn-secondary">Decrypt</button>
+        <button id="clearBtn" class="btn btn-outline">Clear</button>
+      </div>
+
+      <div id="outputSection" class="output-box" style="display: none;">
+        <span id="outputLabel" class="output-label">Cipher Text</span>
+        <div id="outputValue" class="output-value"></div>
+      </div>
+    </div>
+
+    <!-- 7. Result Section -->
+    <div class="lab-section" id="resultSection" style="display: none;">
+      <h2>Result</h2>
+      <div class="result-box">
+        <h3>Experiment Status: Completed</h3>
+        <p>The given plaintext was successfully <span id="resOperationLabel">encrypted</span> using the Caesar Cipher technique.</p>
+        <div class="result-detail">
+          <div><strong>Plain Text:</strong> <span id="resInputText"></span></div>
+          <div><strong>Shift:</strong> <span id="resShiftText"></span></div>
+          <div><strong>Cipher Text:</strong> <span id="resOutputText"></span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="js/caesar.js"></script>
+</body>
+</html>
