@@ -84,4 +84,27 @@ document.addEventListener('DOMContentLoaded', () => {
       resultSection.style.display = 'none';
     });
   }
+
+  const languageSelect = document.getElementById('languageSelect');
+  if (languageSelect) {
+    languageSelect.addEventListener('change', (e) => {
+      const selected = e.target.value;
+      
+      const codePython = document.getElementById('code-python');
+      const codeJava = document.getElementById('code-java');
+      const codeCpp = document.getElementById('code-cpp');
+      
+      if (codePython) codePython.style.display = 'none';
+      if (codeJava) codeJava.style.display = 'none';
+      if (codeCpp) codeCpp.style.display = 'none';
+      
+      if (selected === 'python' && codePython) {
+        codePython.style.display = 'block';
+      } else if (selected === 'java' && codeJava) {
+        codeJava.style.display = 'block';
+      } else if (selected === 'cpp' && codeCpp) {
+        codeCpp.style.display = 'block';
+      }
+    });
+  }
 });

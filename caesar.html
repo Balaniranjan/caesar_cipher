@@ -90,7 +90,16 @@
     <!-- 5. Program Section -->
     <div class="lab-section">
       <h2>Program</h2>
-      <div class="code-container">
+      <div class="form-group" style="margin-bottom: 15px;">
+        <label for="languageSelect">Select Language:</label>
+        <select id="languageSelect" class="form-control" style="max-width: 200px;">
+          <option value="python">Python</option>
+          <option value="java">Java</option>
+          <option value="cpp">C++</option>
+        </select>
+      </div>
+
+      <div id="code-python" class="code-container">
         <div class="code-header">Python Implementation</div>
         <pre><code>def caesar_encrypt(text, shift):
     result = ""
@@ -119,6 +128,99 @@ print("Ciphertext:", ciphertext)
 decrypted = caesar_decrypt(ciphertext, shift)
 
 print("Decrypted text:", decrypted)</code></pre>
+      </div>
+
+      <div id="code-java" class="code-container" style="display: none;">
+        <div class="code-header">Java Implementation</div>
+        <pre><code>import java.util.Scanner;
+
+public class CaesarCipher {
+    public static String encrypt(String text, int shift) {
+        StringBuilder result = new StringBuilder();
+        int shiftMod = shift % 26;
+        if (shiftMod < 0) shiftMod += 26;
+
+        for (char character : text.toCharArray()) {
+            if (Character.isLetter(character)) {
+                char base = Character.isUpperCase(character) ? 'A' : 'a';
+                result.append((char) (((character - base + shiftMod) % 26) + base));
+            } else {
+                result.append(character);
+            }
+        }
+        return result.toString();
+    }
+
+    public static String decrypt(String text, int shift) {
+        return encrypt(text, -shift);
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Enter plaintext: ");
+        String text = scanner.nextLine();
+        
+        System.out.print("Enter shift value: ");
+        int shift = scanner.nextInt();
+        
+        String ciphertext = encrypt(text, shift);
+        System.out.println("Ciphertext: " + ciphertext);
+        
+        String decrypted = decrypt(ciphertext, shift);
+        System.out.println("Decrypted text: " + decrypted);
+        
+        scanner.close();
+    }
+}</code></pre>
+      </div>
+
+      <div id="code-cpp" class="code-container" style="display: none;">
+        <div class="code-header">C++ Implementation</div>
+        <pre><code>#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;cctype&gt;
+
+using namespace std;
+
+string encrypt(string text, int shift) {
+    string result = "";
+    int shiftMod = shift % 26;
+    if (shiftMod &lt; 0) shiftMod += 26;
+    
+    for (char character : text) {
+        if (isalpha(character)) {
+            char base = isupper(character) ? 'A' : 'a';
+            result += char((character - base + shiftMod) % 26 + base);
+        } else {
+            result += character;
+        }
+    }
+    return result;
+}
+
+string decrypt(string text, int shift) {
+    return encrypt(text, -shift);
+}
+
+int main() {
+    string text;
+    int shift;
+
+    cout &lt;&lt; "Enter plaintext: ";
+    getline(cin, text);
+
+    cout &lt;&lt; "Enter shift value: ";
+    cin &gt;&gt; shift;
+
+    string ciphertext = encrypt(text, shift);
+    cout &lt;&lt; "Ciphertext: " &lt;&lt; ciphertext &lt;&lt; endl;
+
+    string decrypted = decrypt(ciphertext, shift);
+    cout &lt;&lt; "Decrypted text: " &lt;&lt; decrypted &lt;&lt; endl;
+
+    return 0;
+}</code></pre>
       </div>
     </div>
 
